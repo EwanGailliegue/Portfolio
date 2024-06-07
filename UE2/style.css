@@ -90,10 +90,18 @@ main h1{
     text-align: center;
     margin-bottom: 30px;
 }
+main h3{
+    margin-top: 3rem;
+}
 
 main .image{
     width: 400px;
-    border: 4px solid green;
+    border: 4px solid orange;
+}
+
+main .imageBig{
+    width: 600px;
+    border: 4px solid orange;
 }
 
 main .firstImg,
@@ -109,7 +117,7 @@ main .thirdImg p{
     padding-right: 20px;
 }
 main .secondImg p,
-main .fourthImg p{
+main .fourthImg article{
     padding-left: 20px;
 }
 
