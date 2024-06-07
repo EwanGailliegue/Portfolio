@@ -90,10 +90,13 @@ main h1{
     text-align: center;
     margin-bottom: 30px;
 }
+main h3{
+    padding-top: 3rem;
+}
 
 main .image{
     width: 400px;
-    border: 4px solid green;
+    border: 4px solid blue;
 }
 
 main .firstImg,
@@ -105,11 +108,11 @@ main .firstLogo{
     align-items: center;
 }
 main .firstImg p,
-main .thirdImg p{
+main .thirdImg p,
+main .fourthImg p{
     padding-right: 20px;
 }
-main .secondImg p,
-main .fourthImg p{
+main .secondImg p{
     padding-left: 20px;
 }
 
