@@ -90,27 +90,54 @@ main h1{
     text-align: center;
     margin-bottom: 30px;
 }
+main h3{
+    padding-top: 3rem;
+}
 
 main .image{
     width: 400px;
-    border: 4px solid green;
+    border: 4px solid rgb(196, 15, 15);
+}
+main .imageS{
+    width: 400px;
 }
 
 main .firstImg,
 main .secondImg,
 main .thirdImg,
 main .fourthImg,
-main .firstLogo{
+main .fifthImg{
     display: flex;
     align-items: center;
 }
 main .firstImg p,
-main .thirdImg p{
+main .thirdImg p,
+main .fifthImg p{
     padding-right: 20px;
 }
 main .secondImg p,
 main .fourthImg p{
     padding-left: 20px;
+}
+main .LogoImage{
+    display: column;
+    justify-content: space-evenly;
+}
+main .logoL{
+    height: 75px;
+    width: 75px;
+}
+
+main ul{
+    
+    padding-top: 10px;
+    padding-left: 50px;
+}
+main ul li{
+    list-style: decimal;
+}
+main ul li .LiBold{
+    font-weight: bold;
 }
 
 main .univLogo{
