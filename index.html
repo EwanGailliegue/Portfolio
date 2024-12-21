@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="banner">
+        Joyeux Noël Papy
+    </div>
+    <div class="photo-container" id="photo-container">
+        <!-- Images will appear here -->
+    </div>
+    <footer>
+        <p>© 2024 Joyeux Noël Papy | fabriqué à la va vite | Ewan</p>
+    </footer>
+    <script>
+        const photos = [
+            'imgs/IMG_3153.jpg',
+            'imgs/IMG_1035.jpg',
+            'imgs/IMG_7086.jpg',
+            'imgs/IMG_7404.jpg',
+            'imgs/IMG_7411.jpg',
+            'imgs/IMG_7451.jpg',
+            'imgs/IMG_2246.jpg',
+            'imgs/1_WA.jpg',
+            'imgs/2_WA.jpg',
+            'imgs/3_WA.jpg',
+            'imgs/4_WA.jpg',
+            'imgs/5_WA.jpg',
+            'imgs/6_WA.jpg',
+        ];
+
+        const container = document.getElementById('photo-container');
+
+        photos.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Photo ${index + 1}`;
+            img.classList.add('fade-in');
+            img.style.animationDelay = `${index * 0.3}s`;
+            container.appendChild(img);
+        });
+    </script>
+    
+</body>
+</html>
