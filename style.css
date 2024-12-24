@@ -62,31 +62,12 @@ body {
     transform: translateY(30px);
     animation: fadeIn 1s forwards;
 }
-
-
-footer {
-    background-color: #c0392b;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 1em;
-}
-
-footer p {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        to {
+            opacity: 1;
+            transform: translateY(0);
+         }
     }
-}
 
  @keyframes snow {
             0% {
@@ -111,14 +92,31 @@ footer p {
             opacity: 0.8;
         }
 
-@media only screen and (max-width: 768px) {
-    .banner {
-        margin-top: 10%;
-        height: 200px;
-        font-size: 2em;
-    }
+        @media only screen and (max-width: 768px) {
+            .banner {
+                margin-top: 10%;
+                height: 200px;
+                font-size: 2em;
+            }
 
-    .photo-container img {
-        max-width: 200px;
-    }
-}
+            .photo-container img {
+                max-width: 200px;
+            }
+        }
+
+        footer {
+            background-color: #c0392b;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        footer p {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
