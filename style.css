@@ -60,7 +60,7 @@ body {
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 2s forwards;
 }
 @keyframes fadeIn {
         to {
