@@ -1,71 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title>Joyeux Noël</title>
+    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Accueil | Portfolio</title>
 </head>
 <body>
-     <div class="background-img">
-        <div class="banner">
-            Joyeux Noël Papy
+    <header>   
+        <nav class="navbar">
+            <a href="#" class="logo">PORTFOLIO</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="UE1/UE1.html">UE1</a></li>
+                    <li><a href="UE2/UE2.html">UE2</a></li>
+                    <li><a href="UE3/UE3.html">UE3</a></li>
+                    <li><a href="UE4/UE4.html">UE4</a></li>
+                    <li><a href="UE5/UE5.html">UE5</a></li>
+                    <li><a href="UE6/UE6.html">UE6</a></li>
+                </ul>
+
+            </div>
+            
+        </nav>
+
+        <div class="background"></div>
+        <div class="title">
+            <h1>PORTFOLIO</h1>
+            <h3>Ewan GAILLIEGUE</h3>
         </div>
-    </div>
-    <div class="photo-container" id="photo-container">
-        <!-- Images will appear here -->
-    </div>
-    <footer>
-        <p>© 2024 Joyeux Noël Papy | fabriqué à la va vite | Ewan</p>
-    </footer>
-    <script>
-        const photos = [
-            'imgs/IMG_3153.jpg',
-            'imgs/IMG_1035.jpg',
-            'imgs/IMG_7086.jpg',
-            'imgs/IMG_7404.jpg',
-            'imgs/IMG_7411.jpg',
-            'imgs/IMG_7451.jpg',
-            'imgs/IMG_2246.jpg',
-            'imgs/1_WA.jpg',
-            'imgs/2_WA.jpg',
-            'imgs/3_WA.jpg',
-            'imgs/4_WA.jpg',
-            'imgs/5_WA.jpg',
-            'imgs/6_WA.jpg',
-            'imgs/7_WA.jpg',
-            'imgs/8_WA.jpg',
-            'imgs/9_WA.jpg'
-        ];
+    </header>
 
-        const container = document.getElementById('photo-container');
-
-        photos.forEach((src, index) => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = `Photo ${index + 1}`;
-            img.classList.add('fade-in');
-            img.style.animationDelay = `${index * 0.3}s`;
-            container.appendChild(img);
-        });
-
-        // Snowflakes
-        const createSnowflake = () => {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.style.left = `${Math.random() * 100}vw`;
-            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            snowflake.style.opacity = Math.random() * 0.5 + 0.5;
-            document.body.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        };
-
-        setInterval(createSnowflake, 100);
-        
-    </script>
-    
+    <div class="footer">
+        <div class="footer-elements">
+            <div class="top-footer">
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>06.48.01.02.78</li>
+                        <li><a href="mailto:ewan.gailliegue3@etu.univ-lorraine.fr">ewan.gailliegue3@etu.univ-lorraine.fr</a></li>
+                    </ul>
+                </div>
+                <div class="about">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="img/curriculum_vitea.pdf" target="_blank">curriculum vitæ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <div class="socialmedia">
+                    <a href="https://www.linkedin.com/in/ewan-gailliegue-a11648280/" target="_blank"><img src="img/icons8-linkedin-75.png" width="60px" alt="Linkedin"></a>
+                </div>
+            </div>
+            <p class="copyright">Copyright &copy; 2024 | Ewan GAILLIEGUE</p>
+        </div>
+      </div>
 </body>
 </html>
