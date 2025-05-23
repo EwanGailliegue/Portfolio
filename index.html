@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Portfolio Ewan GAILLIEGUE </title>
+</head>
+<body data-theme="dark">
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <div class="toggle-slider">
+            <div class="toggle-button">🌙</div>
+        </div>
+    </div>
+	<div class="bg-animation"></div>
+	
+	<div class="container">
+		<div class="hero">
+			<h1>Portfolio</h1>
+			<p class="subtitle">BUT Informatique - Parcours A</p>
+			<p class="description">
+				Étudiant en 2e année de BUT Informatique, je vous présente mes compétences 
+				et réalisations développées tout au long de ma formation.
+			</p>
+		</div>
+
+		<div class="competencies">
+			<div class="competency-card" onclick="navigateTo('realiser')">
+				<span class="competency-icon">🏗️​</span>
+				<h3 class="competency-title">Réaliser</h3>
+				<p class="competency-description">
+					Partir des exigences et aller jusqu’à une application complète
+				</p>
+			</div>
+
+			<div class="competency-card" onclick="navigateTo('optimiser')">
+				<span class="competency-icon">🚀</span>
+				<h3 class="competency-title">Optimiser</h3>
+				<p class="competency-description">
+					Sélectionner les algorithmes adéquatspour répondre à un problème donné
+				</p>
+			</div>
+
+			<div class="competency-card" onclick="navigateTo('administrer')">
+				<span class="competency-icon">🛡️</span>
+				<h3 class="competency-title">Administrer</h3>
+				<p class="competency-description">
+					Déployer des services dans une architecture réseau
+				</p>
+			</div>
+
+			<div class="competency-card" onclick="navigateTo('gerer')">
+				<span class="competency-icon">📊</span>
+				<h3 class="competency-title">Gérer</h3>
+				<p class="competency-description">
+					Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité
+				</p>
+			</div>
+
+			<div class="competency-card" onclick="navigateTo('conduire')">
+				<span class="competency-icon">🎯</span>
+				<h3 class="competency-title">Conduire</h3>
+				<p class="competency-description">
+					Appliquer une démarche de suivi de projet en fonction des besoins métiers des clients et des utilisateurs
+				</p>
+			</div>
+
+			<div class="competency-card" onclick="navigateTo('collaborer')">
+				<span class="competency-icon">🤝</span>
+				<h3 class="competency-title">Collaborer</h3>
+				<p class="competency-description">
+					Situer son rôle et ses missions au sein d’une équipe informatique
+				</p>
+			</div>
+		</div>
+
+		<div class="footer">
+			&copy; 2025 Ewan GAILLIEGUE - Portfolio BUT Informatique | Tous droits réservés
+		</div>
+	</div>
+
+	<script>
+        function toggleTheme() {
+            const body = document.body;
+            const toggleButton = document.querySelector('.toggle-button');
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                toggleButton.textContent = '🌞';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                toggleButton.textContent = '🌛​';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function navigateTo(competency) {
+            // Animation de clic
+            event.currentTarget.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                event.currentTarget.style.transform = '';
+            }, 150);
+
+            // Ici tu peux ajouter la navigation vers les différentes pages
+            console.log(`Navigation vers: ${competency}`);
+            // Exemple: window.location.href = `${competency}.html`;
+        }
+
+        // Charger le thème sauvegardé
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const body = document.body;
+            const toggleButton = document.querySelector('.toggle-button');
+            
+            body.setAttribute('data-theme', savedTheme);
+            toggleButton.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+            // Animation d'entrée progressive
+            const cards = document.querySelectorAll('.competency-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${0.1 + index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
