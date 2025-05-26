@@ -9,7 +9,7 @@
 <body data-theme="dark">
     <div class="theme-toggle" onclick="toggleTheme()">
         <div class="toggle-slider">
-            <div class="toggle-button">🌙</div>
+            <div class="toggle-button">🌛</div>
         </div>
     </div>
 	<div class="bg-animation"></div>
@@ -118,7 +118,7 @@
             const toggleButton = document.querySelector('.toggle-button');
             
             body.setAttribute('data-theme', savedTheme);
-            toggleButton.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+            toggleButton.textContent = savedTheme === 'dark' ? '🌛' : '🌞';
 
             // Animation d'entrée progressive
             const cards = document.querySelectorAll('.competency-card');
