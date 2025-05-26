@@ -133,10 +133,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
             padding: 2rem;
             position: relative;
+            padding-top: 4rem;
         }
 
         /* Hero section */
@@ -250,12 +251,11 @@
 
         /* Footer */
         .footer {
-            position: absolute;
-            bottom: 2rem;
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.9rem;
             animation: fadeIn 1s ease-out 1s both;
+            margin-top: 1rem;
         }
 
         /* Animations */
@@ -279,11 +279,14 @@
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
+                padding-top: 3rem;
+                justify-content: flex-start;
             }
             
             .competencies {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+                margin-bottom: 2rem;
             }
             
             .competency-card {
@@ -292,6 +295,28 @@
             
             .hero {
                 margin-bottom: 3rem;
+            }
+
+            .footer {
+                margin-top: 2rem;
+                padding: 1.5rem 0;
+            }
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+                width: 70px;
+                height: 35px;
+            }
+
+            .toggle-button {
+                width: 28px;
+                height: 28px;
+                font-size: 0.7rem;
+            }
+
+            [data-theme="light"] .toggle-button {
+                transform: translateX(32px);
             }
         }
 
