@@ -25,7 +25,7 @@
     <div class="container">
         <!-- Header de la compétence -->
         <header class="competence-header">
-            <span class="competence-icon">⚡</span>
+            <span class="competence-icon">🚀</span>
             <h1 class="competence-title">Optimiser</h1>
             <p class="competence-description">
                 Sélectionner les algorithmes adéquats pour répondre à un problème donné
@@ -94,7 +94,7 @@
                 <div class="skill-item">
                     <span class="skill-icon">⚡</span>
                     <div class="skill-name">Optimisation</div>
-                    <div class="skill-description">Programmation dynamique, Algorithmes gloutons</div>
+                    <div class="skill-description">Programmation dynamique, Algorithmes gloutons, Alpha-Beta</div>
                 </div>
             </div>
         </section>
@@ -121,15 +121,18 @@
                 <p><strong>Modélisation mathématique :</strong> Calcul de l'espérance de revenus E(Rn) = nb - tb(n-E(Xn)) - d·E(max(0,Xn-m)) avec analyse des paramètres critiques (taux de présence p, pénalités d, remboursements t).</p>
                 <p><strong>Résultats obtenus :</strong> Pour m1=22 (p=0.86), optimum à n=24 avec gain de 136€ (6.2%) ; pour m2=102 (p=0.91), optimum à n=110 avec gain de 711€ (6.9%) par rapport au scenario sans surbooking.</p>
                 <p><strong>Outils développés :</strong> Simulateur interactif permettant de tester différents scénarios, graphiques comparatifs des performances, analyse de sensibilité des paramètres clés.</p>
-            </div>
-
-            <div class="image-container">
+            
+                <div class="image-container">
                     <img src="img/codeSAE308.png" alt="exemple code" class="competence-image">
                     <p class="image-caption"> Optimisation du calcule d'une espérance</p>
+                </div>
+            
             </div>
 
+            
+
             <div class="project-item">
-                <h3 class="project-title">SAE3 - Algorithmes de tri et analyse comparative</h3>
+                <h3 class="project-title">Projet personnel - Algorithmes de tri et analyse comparative</h3>
                 <p class="project-description">
                     Étude comparative approfondie des algorithmes de tri (QuickSort, MergeSort, HeapSort, RadixSort) sur différents types de données. Implémentation de versions optimisées et analyse des performances selon la taille et la nature des données d'entrée.
                 </p>
@@ -142,19 +145,22 @@
                     <span class="tech-tag">Matplotlib</span>
                 </div>
                 <p><strong>Découvertes clés :</strong> QuickSort avec pivot médian-de-trois est optimal pour données aléatoires, MergeSort excelle sur données partiellement triées, RadixSort imbattable pour entiers sur grand volume.</p>
-            </div>
-            <div class="image-container">
+            
+                <div class="image-container">
                     <img src="img/sort_chart.jpg" alt="tableau des complexités" class="competence-image">
                     <p class="image-caption">Tableau représentant les compléxités des algorithmes de tri.</p>
-            </div>
+                </div>
 
-            <div class="image-container">
-                    <img src="img/sort_graph.png" alt="graphique performance" class="competence-image">
-                    <p class="image-caption">Graphique représentant les performances des différentes algorithmes de tri.</p>
+                <div class="image-container">
+                        <img src="img/sort_graph.png" alt="graphique performance" class="competence-image">
+                        <p class="image-caption">Graphique représentant les performances des différentes algorithmes de tri.</p>
+                </div>
+                
             </div>
+            
 
             <div class="project-item">
-                <h3 class="project-title">Projet personnel - Jeu de Morpion avec IA optimisée</h3>
+                <h3 class="project-title">Projet TP - Jeu de Morpion avec robot optimisée</h3>
                 <p class="project-description">
                     Développement d'un jeu de morpion en Java avec une intelligence artificielle utilisant l'algorithme Minimax optimisé par l'élagage Alpha-Beta. Le bot analyse l'arbre de jeu pour prendre les meilleures décisions en réduisant drastiquement le nombre de nœuds explorés.
                 </p>
@@ -168,12 +174,15 @@
                 </div>
                 <p><strong>Optimisation réalisée :</strong> L'élagage Alpha-Beta réduit de 90% le nombre de nœuds explorés par rapport au Minimax classique, permettant au bot de calculer instantanément le coup optimal.</p>
                 <p><strong>Performance :</strong> IA imbattable qui joue en temps réel (< 1ms par coup), exploration intelligente de seulement 10-15% de l'arbre de jeu complet grâce à l'élagage.</p>
+            
+                <div class="image-container">
+                        <img src="img/min-max.jpg" alt="exemple Alpha-Beta" class="competence-image">
+                        <p class="image-caption"> Arbre des prédictions de l'algorithme min-max</p>
+                </div>
+            
             </div>
 
-            <div class="image-container">
-                    <img src="img/min-max.jpg" alt="exemple Alpha-Beta" class="competence-image">
-                    <p class="image-caption"> Arbre des prédictions de l'algorithme min-max</p>
-            </div>
+            
         </section>
 
         <!-- Section: Algorithmes et techniques maîtrisés -->
