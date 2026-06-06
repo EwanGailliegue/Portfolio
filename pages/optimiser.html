@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimiser — Ewan GAILLIEGUE</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body class="page">
+
+<header class="site-header-page">
+  <a href="../index.html" class="hero-back">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7-7"/></svg>
+    Retour
+  </a>
+  <span class="header-id">Ewan <strong>GAILLIEGUE</strong> · BUT Info</span>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="hero-tag">Compétence 02</p>
+    <h1 class="hero-title">Optimiser</h1>
+    <p class="hero-desc">Proposer des applications informatiques optimisées selon des critères précis, complexité algorithmique, performance, consommation mémoire, qualité du code.</p>
+    <div class="hero-pills">
+      <span class="pill"><span class="pill-dot"></span>SAÉ 6 · BUT Info · Fév. 2026</span>
+      <span class="pill">Flutter · Dart · OSRM</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+
+  <section>
+    <div class="sec-header">
+      <span class="sec-title">Optimisations appliquées</span>
+      <span class="sec-count">6 domaines</span>
+    </div>
+    <div class="optim-list">
+
+      <div class="optim-card">
+        <div class="optim-card-header">
+          <span class="optim-num">01</span>
+          <div class="optim-header-text">
+            <p class="optim-domain">Algorithmique</p>
+            <p class="optim-title">Optimisation d'itinéraire TSP via OSRM</p>
+          </div>
+        </div>
+        <div class="optim-body">
+          <div>
+            <p class="optim-col-title">Problème &amp; solution</p>
+            <p class="optim-text">Lors de l'ouverture de la carte, l'application doit calculer l'ordre de passage optimal entre N dépôts restants — un problème NP-difficile (TSP). Plutôt qu'une approche naïve O(n!), l'app délègue la résolution à l'API <strong>OSRM /trip/v1/driving/</strong> qui implémente une heuristique <em>farthest insertion</em> + optimisation locale sur le réseau routier réel.</p>
+            <div class="metric-row">
+              <div class="metric"><span class="metric-val">O(n!)</span><span class="metric-label">Naïf évité</span></div>
+              <div class="metric"><span class="metric-val">~25</span><span class="metric-label">Waypoints max</span></div>
+              <div class="metric"><span class="metric-val">4</span><span class="metric-label">Cas de fallback</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="optim-col-title">Comportements de fallback</p>
+            <table class="fallback-table">
+              <tr><th>Situation</th><th>Comportement</th></tr>
+              <tr><td>&lt; 2 dépôts</td><td>Centrage simple, pas d'itinéraire</td></tr>
+              <tr><td>0–1 stop restant</td><td>Route directe /route sans TSP</td></tr>
+              <tr><td>GPS indisponible</td><td>Ordre original conservé</td></tr>
+              <tr><td>OSRM inaccessible</td><td>Ordre original + message info</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="optim-card">
+        <div class="optim-card-header">
+          <span class="optim-num">02</span>
+          <div class="optim-header-text">
+            <p class="optim-domain">Rendu Flutter</p>
+            <p class="optim-title">Widgets <code>const</code> &amp; modèles immuables</p>
+          </div>
+        </div>
+        <div class="optim-body">
+          <div>
+            <p class="optim-col-title">Principe</p>
+            <p class="optim-text">L'utilisation systématique de <code>const</code> permet à Flutter d'éviter la reconstruction des sous-arbres de widgets inchangés lors d'un <code>setState</code>. Les modèles déclarent tous leurs champs en <code>final</code>, garantissant l'immuabilité et simplifiant les comparaisons lors des rebuilds.</p>
+            <div class="metric-row">
+              <div class="metric"><span class="metric-val">577</span><span class="metric-label">Occurrences const</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="optim-col-title">Exemple — modèle immuable</p>
+            <div class="code-block"><span class="kw">class</span> <span class="fn">ClientDelivery</span> {
+  <span class="kw">final</span> String id;
+  <span class="kw">final</span> DateTime scheduledDate;
+  <span class="kw">final</span> String status;
+
+  <span class="kw">const</span> <span class="fn">ClientDelivery</span>({
+    <span class="kw">required</span> <span class="kw">this</span>.id,
+    <span class="kw">required</span> <span class="kw">this</span>.scheduledDate,
+    <span class="kw">required</span> <span class="kw">this</span>.status,
+  });
+}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="optim-card">
+        <div class="optim-card-header">
+          <span class="optim-num">03</span>
+          <div class="optim-header-text">
+            <p class="optim-domain">Rendu de listes</p>
+            <p class="optim-title">Lazy rendering avec <code>ListView.separated</code></p>
+          </div>
+        </div>
+        <div class="optim-body">
+          <div>
+            <p class="optim-col-title">Principe</p>
+            <p class="optim-text">Les listes utilisent <code>ListView.separated()</code> avec un <code>itemBuilder</code>, construisant les éléments <strong>à la demande</strong> plutôt que tous d'un coup. Pour les petites listes connues, le spread operator est préféré à une boucle avec <code>add()</code>.</p>
+            <div class="tags" style="margin-top:.75rem"><span class="tag">Lazy rendering</span><span class="tag">itemBuilder</span><span class="tag">Spread operator</span></div>
+          </div>
+          <div>
+            <p class="optim-col-title">Exemple</p>
+            <div class="code-block"><span class="fn">ListView</span>.separated(
+  itemCount: filtered.length,
+  separatorBuilder: (_, __) =>
+    <span class="kw">const</span> <span class="fn">SizedBox</span>(height: <span class="nb">8</span>),
+  itemBuilder: (ctx, i) =>
+    <span class="fn">_HistoryTile</span>(
+      delivery: filtered[i],
+      onTap: ...,
+    ),
+)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="optim-card">
+        <div class="optim-card-header">
+          <span class="optim-num">04</span>
+          <div class="optim-header-text">
+            <p class="optim-domain">Asynchronisme &amp; mémoire</p>
+            <p class="optim-title"><code>FutureBuilder</code>, <code>mounted</code> &amp; prévention des fuites</p>
+          </div>
+        </div>
+        <div class="optim-body">
+          <div>
+            <p class="optim-col-title">Techniques appliquées</p>
+            <ul class="task-list">
+              <li><strong>FutureBuilder</strong> — thread UI libre pendant les requêtes réseau</li>
+              <li><strong>Vérification mounted</strong> — avant tout setState après une opération async</li>
+              <li><strong>dispose() systématique</strong> — AnimationController et MobileScannerController libérés</li>
+              <li><strong>Flag _busy</strong> — bloque les doubles scans QR simultanés</li>
+            </ul>
+            <div class="metric-row">
+              <div class="metric"><span class="metric-val">40</span><span class="metric-label">Checks mounted</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="optim-col-title">Pattern dispose + mounted</p>
+            <div class="code-block"><span class="cm">// dispose systématique</span>
+<span class="nb">@override</span>
+<span class="kw">void</span> <span class="fn">dispose</span>() {
+  _lineCtrl.<span class="fn">dispose</span>();
+  _controller.<span class="fn">dispose</span>();
+  <span class="kw">super</span>.<span class="fn">dispose</span>();
+}
+
+<span class="cm">// vérification mounted</span>
+<span class="kw">if</span> (!mounted) <span class="kw">return</span>;
+<span class="fn">setState</span>(() { ... });</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="optim-card">
+        <div class="optim-card-header">
+          <span class="optim-num">05</span>
+          <div class="optim-header-text">
+            <p class="optim-domain">Sécurité &amp; performance</p>
+            <p class="optim-title">Injection du token JWT à la demande</p>
+          </div>
+        </div>
+        <div class="optim-body">
+          <div>
+            <p class="optim-col-title">Principe</p>
+            <p class="optim-text">Le token d'authentification n'est lu depuis le stockage sécurisé <strong>qu'au moment de la requête</strong>, évitant de le maintenir en mémoire vive entre les appels.</p>
+            <div class="tags" style="margin-top:.75rem"><span class="tag">flutter_secure_storage</span><span class="tag">Lazy evaluation</span><span class="tag">Keychain / Keystore</span></div>
+          </div>
+          <div>
+            <p class="optim-col-title">Implémentation</p>
+            <div class="code-block"><span class="kw">Future</span>&lt;Map&lt;String, String&gt;&gt;
+    <span class="fn">_headers</span>({<span class="kw">bool</span> auth = <span class="kw">true</span>}) <span class="kw">async</span> {
+  <span class="kw">final</span> h = {
+    <span class="str">'Accept'</span>: <span class="str">'application/json'</span>,
+  };
+  <span class="kw">if</span> (auth) {
+    <span class="cm">// lecture lazy depuis le keychain</span>
+    <span class="kw">final</span> token = <span class="kw">await</span> <span class="fn">tokenProvider</span>();
+    <span class="kw">if</span> (token != <span class="kw">null</span>)
+      h[<span class="str">'Authorization'</span>] = <span class="str">'Bearer $token'</span>;
+  }
+  <span class="kw">return</span> h;
+}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="optim-card">
+        <div class="optim-card-header">
+          <span class="optim-num">06</span>
+          <div class="optim-header-text">
+            <p class="optim-domain">Architecture &amp; qualité</p>
+            <p class="optim-title">Séparation UI / données &amp; thème centralisé</p>
+          </div>
+        </div>
+        <div class="optim-body">
+          <div>
+            <p class="optim-col-title">Principes appliqués</p>
+            <ul class="task-list">
+              <li><strong>Feature-first</strong> — chaque fonctionnalité isolée dans son propre dossier</li>
+              <li><strong>Couche services</strong> — l'UI ne manipule jamais de JSON brut</li>
+              <li><strong>Thème centralisé</strong> — couleurs en static const dans AppColors</li>
+              <li><strong>Navigation propre</strong> — pushReplacement après connexion, pushAndRemoveUntil à la déconnexion</li>
+              <li><strong>flutter_lints</strong> — détection statique des anti-patterns à la compilation</li>
+            </ul>
+          </div>
+          <div>
+            <p class="optim-col-title">Structure services</p>
+            <div class="code-block">lib/services/
+  <span class="c-blue">api_client.dart</span>      <span class="cm">← HTTP générique</span>
+  <span class="c-blue">auth_service.dart</span>    <span class="cm">← token JWT</span>
+  <span class="c-blue">deliverer_service.dart</span><span class="cm">← API livreur</span>
+  <span class="c-blue">client_service.dart</span>  <span class="cm">← API client</span>
+  <span class="c-blue">route_service.dart</span>   <span class="cm">← OSRM TSP</span>
+
+lib/models/
+  <span class="c-blue">client_delivery.dart</span>
+  <span class="c-blue">delivery_run.dart</span>
+  <span class="c-blue">run_stop_item.dart</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-header"><span class="sec-title">Compétences techniques</span></div>
+    <div class="skills-grid">
+      <span class="skill-chip"><span class="skill-dot"></span>Algorithmique TSP</span>
+      <span class="skill-chip"><span class="skill-dot"></span>OSRM</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Flutter const / immuabilité</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Lazy rendering</span>
+      <span class="skill-chip"><span class="skill-dot"></span>FutureBuilder</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Gestion mémoire Dart</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Architecture feature-first</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Séparation UI / services</span>
+      <span class="skill-chip"><span class="skill-dot"></span>flutter_secure_storage</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Qualité statique (flutter_lints)</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Null-safety Dart</span>
+    </div>
+  </section>
+
+</div>
+
+<script src="../js/pages.js"></script>
+</body>
+</html>

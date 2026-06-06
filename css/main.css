@@ -1,0 +1,126 @@
+/* ============================================================
+   main.css — Variables, reset, header, footer
+   Partagé par toutes les pages
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── VARIABLES ── */
+:root {
+  /* Landing (fond sombre) */
+  --navy:        #07112B;
+  --navy2:       #0C1A3A;
+  --navy3:       #122248;
+  --blue:        #1B6FFF;
+  --blue2:       #4D94FF;
+  --cyan:        #00C8EA;
+  --white:       #EEF3FF;
+  --dim:         #A8BDE0;
+  --muted:       rgba(168,189,224,0.45);
+
+  /* Pages compétences (fond clair) */
+  --pg-bg:         #F7F9FC;
+  --pg-white:      #FFFFFF;
+  --pg-navy:       #0B1829;
+  --pg-navy2:      #1E2D45;
+  --pg-blue:       #1B6FFF;
+  --pg-blue-light: #EBF2FF;
+  --pg-dim:        #6B7FA3;
+  --pg-border:     #E2E8F2;
+
+  --font: 'Plus Jakarta Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ── GOOGLE FONTS (chargé une fois ici via @import) ── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+/* ── LANDING HEADER ── */
+.site-header-landing {
+  position: relative; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid rgba(168,189,224,0.09);
+  animation: fadeDown 0.6s ease both;
+}
+
+.name-block { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+
+.firstname {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem); font-weight: 800;
+  color: var(--white); letter-spacing: -0.5px; line-height: 1;
+}
+.lastname {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem); font-weight: 400;
+  color: var(--blue2); letter-spacing: -0.5px; line-height: 1;
+}
+.badge {
+  display: block; width: 100%;
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(168,189,224,0.45); margin-top: 0.2rem;
+}
+
+.social-links { display: flex; gap: 0.55rem; }
+.social-btn {
+  display: flex; align-items: center; gap: 0.38rem;
+  padding: 0.42rem 0.95rem;
+  border: 1px solid rgba(168,189,224,0.17); border-radius: 100px;
+  color: var(--dim); text-decoration: none;
+  font-family: var(--font);
+  font-size: 0.78rem; font-weight: 500;
+  transition: all 0.2s ease;
+  background: rgba(27,111,255,0.07);
+}
+.social-btn:hover {
+  border-color: var(--blue2); color: var(--white);
+  background: rgba(27,111,255,0.18);
+}
+
+/* ── LANDING FOOTER ── */
+.site-footer-landing {
+  position: relative; z-index: 10;
+  padding: 1rem 3rem; display: flex; gap: 0.4rem;
+  border-top: 1px solid rgba(168,189,224,0.06);
+  font-family: var(--font);
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 1px; color: rgba(168,189,224,0.2);
+  animation: fadeUp 0.5s ease 0.5s both;
+}
+.footer-year { color: var(--blue2); opacity: 0.5; }
+
+/* ── PAGES HEADER ── */
+.site-header-page {
+  background: var(--pg-white); border-bottom: 1px solid var(--pg-border);
+  padding: 1.25rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+  font-family: var(--font);
+}
+.hero-back {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  text-decoration: none; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--pg-dim); transition: color 0.2s;
+}
+.hero-back:hover { color: var(--pg-navy); }
+.header-id {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--pg-dim);
+}
+.header-id strong { color: var(--pg-navy); font-weight: 700; }
+
+/* ── KEYFRAMES communs ── */
+@keyframes fadeDown { from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:none} }
+@keyframes fadeUp   { from{opacity:0;transform:translateY(14px)}  to{opacity:1;transform:none} }
+@keyframes blink    { 0%,100%{opacity:1;} 50%{opacity:0.15;} }
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .site-header-landing { flex-direction:column; align-items:flex-start; gap:1rem; padding:1.2rem 1.4rem; }
+  .social-btn span { display:none; }
+  .social-btn { padding:.42rem .7rem; }
+  .site-header-page { padding:1.2rem 1.4rem; }
+}

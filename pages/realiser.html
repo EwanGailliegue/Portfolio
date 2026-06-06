@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réaliser — Ewan GAILLIEGUE</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body class="page">
+
+<header class="site-header-page">
+  <a href="../index.html" class="hero-back">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7-7"/></svg>
+    Retour
+  </a>
+  <span class="header-id">Ewan <strong>GAILLIEGUE</strong> · BUT Info</span>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="hero-tag">Compétence 01</p>
+    <h1 class="hero-title">Réaliser</h1>
+    <p class="hero-desc">Concevoir, développer et valider des applications informatiques répondant à des besoins identifiés de la maquette au déploiement.</p>
+    <div class="hero-pills">
+      <span class="pill"><span class="pill-dot"></span>SAÉ 6 · BUT Info · Fév. 2026</span>
+      <span class="pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Flutter · iOS &amp; Android
+      </span>
+      <span class="pill">Node.js · PostgreSQL</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+
+  <section>
+    <div class="sec-header">
+      <span class="sec-title">Projet principal</span>
+      <span class="sec-count">SAÉ 6</span>
+    </div>
+
+    <div class="project-hero">
+      <div class="app-img-wrap">
+        <img src="../assets/app.png" alt="Application Jardins de Cocagne" onerror="this.style.display='none'"/>
+      </div>
+      <div class="project-hero-header">
+        <div>
+          <p class="project-name">Jardins de Cocagne</p>
+          <p class="project-subtitle">Application mobile de gestion des livraisons de paniers biologiques</p>
+        </div>
+        <span class="project-badge">Cross-platform</span>
+      </div>
+      <p class="project-desc">
+        Développement de deux applications mobiles complémentaires (livreur &amp; client) pour les Jardins de Cocagne, une structure distribuant des paniers biologiques en circuit court. Le projet couvre l'ensemble du cycle : conception, développement Flutter, API REST Node.js, base PostgreSQL, et déploiement avec notifications push Firebase.
+      </p>
+      <div class="project-grid">
+        <div class="project-col">
+          <p class="col-label">App Livreur</p>
+          <ul class="feat-list">
+            <li>Authentification JWT avec stockage sécurisé (Keychain / Keystore)</li>
+            <li>Affichage des tournées du jour et récapitulatif des paniers</li>
+            <li>Scan QR code du dépôt et de chaque panier individuel</li>
+            <li>Mise à jour instantanée du statut côté serveur</li>
+            <li>Carte interactive OpenStreetMap avec marqueurs colorés par état</li>
+            <li>Navigation GPS vers le dépôt suivant via <code>url_launcher</code></li>
+          </ul>
+        </div>
+        <div class="project-col">
+          <p class="col-label">App Client</p>
+          <ul class="feat-list">
+            <li>Tableau de bord avec statut de la prochaine livraison</li>
+            <li>Historique complet des livraisons et détail des paniers</li>
+            <li>Notifications push Firebase reçues dès la validation du panier</li>
+            <li>Fonctionne en arrière-plan et application fermée (FCM)</li>
+            <li>Marquage des notifications comme lues</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-grid" style="border-top: 1px solid var(--pg-border)">
+        <div class="project-col">
+          <p class="col-label">Stack Frontend</p>
+          <div class="tech-grid">
+            <div>
+              <p class="tech-group-label">Mobile</p>
+              <div class="tags">
+                <span class="tag">Flutter</span><span class="tag">Dart</span>
+                <span class="tag">flutter_map</span><span class="tag">mobile_scanner</span>
+                <span class="tag">geolocator</span><span class="tag">firebase_messaging</span>
+                <span class="tag">flutter_secure_storage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-col">
+          <p class="col-label">Stack Backend</p>
+          <div class="tech-grid">
+            <div>
+              <p class="tech-group-label">Serveur &amp; données</p>
+              <div class="tags">
+                <span class="tag">Node.js</span><span class="tag">Express</span>
+                <span class="tag">PostgreSQL</span><span class="tag">JWT + bcrypt</span>
+                <span class="tag">Firebase Admin SDK</span><span class="tag">OSRM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-header"><span class="sec-title">Architecture générale</span></div>
+    <div class="arch-block"><span class="c-dim">┌─────────────────────────────────────────────────────┐</span>
+<span class="c-dim">│</span>              <span class="c-blue">APPLICATION FLUTTER</span>                      <span class="c-dim">│</span>
+<span class="c-dim">│  ┌──────────────────────┐  ┌──────────────────────┐ │</span>
+<span class="c-dim">│  │</span> <span class="c-green">App Livreur</span>          <span class="c-dim">│  │</span> <span class="c-yellow">App Client</span>            <span class="c-dim">│ │</span>
+<span class="c-dim">│  │</span>  Tournées · QR · GPS <span class="c-dim">│  │</span>  Suivi · Historique   <span class="c-dim">│ │</span>
+<span class="c-dim">│  └──────────┬───────────┘  └──────────┬────────────┘ │</span>
+<span class="c-dim">└─────────────┼────────────────────────┼──────────────┘</span>
+              <span class="c-dim">│</span>      <span class="c-cyan">API REST (JWT)</span>     <span class="c-dim">│</span>
+              <span class="c-dim">▼                        ▼</span>
+   <span class="c-dim">┌──────────────────────────────────────┐</span>
+   <span class="c-dim">│</span>     <span class="c-blue">Backend Node.js / Express</span>        <span class="c-dim">│</span>
+   <span class="c-dim">│</span>  Auth JWT  ·  Livraisons  ·  Push    <span class="c-dim">│</span>
+   <span class="c-dim">└──────────────────┬───────────────────┘</span>
+                     <span class="c-dim">│</span>
+           <span class="c-dim">┌─────────▼──────────┐</span>
+           <span class="c-dim">│</span>  <span class="c-yellow">PostgreSQL</span>          <span class="c-dim">│</span>
+           <span class="c-dim">│</span>  schéma cocagne     <span class="c-dim">│</span>
+           <span class="c-dim">└────────────────────┘</span></div>
+  </section>
+
+  <section>
+    <div class="sec-header">
+      <span class="sec-title">Fonctionnalités développées</span>
+      <span class="sec-count">6 modules</span>
+    </div>
+    <div class="accordion">
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-type">AUTH</span>
+          <span class="acc-name">Authentification &amp; sécurité</span>
+          <span class="acc-hint">JWT · bcrypt · stockage sécurisé</span>
+          <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner"><div class="acc-panel-content has-img">
+          <div class="panel-img-wrap">
+            <img src="../assets/auth.png" alt="Écran de connexion" onerror="this.style.display='none'"/>
+            <div class="panel-img-placeholder">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="15" r="2"/></svg>
+              <span>auth.png</span>
+            </div>
+          </div>
+          <div>
+            <p class="panel-block-title">Implémentation</p>
+            <ul class="task-list">
+              <li>Écran de connexion avec validation des champs</li>
+              <li>Appel POST /auth/login → réception du JWT</li>
+              <li>Stockage sécurisé et injection à la demande dans chaque requête</li>
+              <li>Gestion des rôles LIVREUR / CLIENT / ADMIN</li>
+              <li>Nettoyage de la pile de navigation après connexion</li>
+            </ul>
+          </div>
+          <div>
+            <p class="panel-block-title">Technologies</p>
+            <div class="stags"><span class="stag">JWT</span><span class="stag">bcrypt</span><span class="stag">flutter_secure_storage</span><span class="stag">Navigator</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-type">MAP</span>
+          <span class="acc-name">Carte &amp; navigation GPS</span>
+          <span class="acc-hint">OpenStreetMap · flutter_map · geolocator</span>
+          <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner"><div class="acc-panel-content has-img">
+          <div class="panel-img-wrap">
+            <img src="../assets/map.png" alt="Carte de navigation" onerror="this.style.display='none'"/>
+            <div class="panel-img-placeholder">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>map.png</span>
+            </div>
+          </div>
+          <div>
+            <p class="panel-block-title">Implémentation</p>
+            <ul class="task-list">
+              <li>Marqueurs gris (livré), vert (prochain, halo animé), orange (à venir)</li>
+              <li>Récupération de la position GPS en temps réel via geolocator</li>
+              <li>Tracé de la polyline de l'itinéraire optimisé par OSRM</li>
+              <li>Bouton de navigation native via url_launcher (Google Maps / Plans)</li>
+              <li>Centrage automatique sur le prochain dépôt</li>
+            </ul>
+          </div>
+          <div>
+            <p class="panel-block-title">Technologies</p>
+            <div class="stags"><span class="stag">flutter_map</span><span class="stag">latlong2</span><span class="stag">geolocator</span><span class="stag">url_launcher</span><span class="stag">OpenStreetMap</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-type">QR</span>
+          <span class="acc-name">Scan QR &amp; traçabilité</span>
+          <span class="acc-hint">mobile_scanner · validation temps réel</span>
+          <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner"><div class="acc-panel-content has-img">
+          <div class="panel-img-wrap">
+            <img src="../assets/scan.png" alt="Scan QR code" onerror="this.style.display='none'"/>
+            <div class="panel-img-placeholder">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 20h3"/></svg>
+              <span>scan.png</span>
+            </div>
+          </div>
+          <div>
+            <p class="panel-block-title">Implémentation</p>
+            <ul class="task-list">
+              <li>Lecture QR via caméra native avec mobile_scanner</li>
+              <li>Flag _busy pour bloquer les doubles scans</li>
+              <li>POST /deliverer/scan/depot puis /scan/package</li>
+              <li>Animation de la ligne de scan (AnimationController en repeat)</li>
+              <li>Passage automatique au dépôt suivant après validation</li>
+            </ul>
+          </div>
+          <div>
+            <p class="panel-block-title">Technologies</p>
+            <div class="stags"><span class="stag">mobile_scanner</span><span class="stag">AnimationController</span><span class="stag">API REST</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-type">PUSH</span>
+          <span class="acc-name">Notifications push Firebase</span>
+          <span class="acc-hint">FCM · arrière-plan · token auto-rafraîchi</span>
+          <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner"><div class="acc-panel-content">
+          <p class="panel-desc">Les clients reçoivent une notification push dès que le livreur valide leur panier. Fonctionne même si l'app est fermée grâce à Firebase Cloud Messaging (FCM).</p>
+          <div>
+            <p class="panel-block-title">Implémentation</p>
+            <ul class="task-list">
+              <li>Enregistrement du token FCM au démarrage de l'app</li>
+              <li>Listener onTokenRefresh pour mise à jour automatique</li>
+              <li>Handler background isolé pour les notifications en arrière-plan</li>
+              <li>Envoi depuis le backend via Firebase Admin SDK</li>
+              <li>Nettoyage automatique des tokens FCM expirés</li>
+            </ul>
+          </div>
+          <div>
+            <p class="panel-block-title">Technologies</p>
+            <div class="stags"><span class="stag">firebase_messaging</span><span class="stag">Firebase Admin SDK</span><span class="stag">FCM</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-type">API</span>
+          <span class="acc-name">API REST Node.js</span>
+          <span class="acc-hint">Express · JWT middleware · RBAC</span>
+          <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner"><div class="acc-panel-content">
+          <p class="panel-desc">API REST complète avec authentification JWT, gestion des rôles et routes dédiées livreur / client / admin. Connectée à une base PostgreSQL (schéma cocagne).</p>
+          <div>
+            <p class="panel-block-title">Routes principales</p>
+            <ul class="task-list">
+              <li>POST /auth/login · GET /auth/me</li>
+              <li>GET /deliverer/runs/today · /runs/:id/stops</li>
+              <li>POST /deliverer/scan/depot · /scan/package</li>
+              <li>GET /client/dashboard · /deliveries · /notifications</li>
+              <li>POST /client/push-token · /notifications/mark-read</li>
+            </ul>
+          </div>
+          <div>
+            <p class="panel-block-title">Technologies</p>
+            <div class="stags"><span class="stag">Node.js</span><span class="stag">Express</span><span class="stag">PostgreSQL</span><span class="stag">JWT</span><span class="stag">bcrypt</span><span class="stag">RBAC</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-type">BDD</span>
+          <span class="acc-name">Base de données PostgreSQL</span>
+          <span class="acc-hint">Schéma cocagne · 13 tables · ENUMs</span>
+          <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner"><div class="acc-panel-content">
+          <p class="panel-desc">Schéma PostgreSQL cocagne avec 13 tables couvrant l'ensemble du domaine métier : tournées, arrêts, paniers, scans, abonnements clients et notifications push.</p>
+          <div>
+            <p class="panel-block-title">Tables principales</p>
+            <ul class="task-list">
+              <li>users · organizations · depots · depot_slots</li>
+              <li>tours · delivery_runs · run_stops</li>
+              <li>products · subscriptions · deliveries · packages</li>
+              <li>push_tokens · notifications</li>
+            </ul>
+          </div>
+          <div>
+            <p class="panel-block-title">Technologies</p>
+            <div class="stags"><span class="stag">PostgreSQL</span><span class="stag">SQL</span><span class="stag">ENUMs</span><span class="stag">pgAdmin 4</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-header"><span class="sec-title">Compétences techniques</span></div>
+    <div class="skills-grid">
+      <span class="skill-chip"><span class="skill-dot"></span>Flutter / Dart</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Node.js / Express</span>
+      <span class="skill-chip"><span class="skill-dot"></span>PostgreSQL</span>
+      <span class="skill-chip"><span class="skill-dot"></span>API REST</span>
+      <span class="skill-chip"><span class="skill-dot"></span>JWT / bcrypt</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Firebase / FCM</span>
+      <span class="skill-chip"><span class="skill-dot"></span>OpenStreetMap</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Scan QR code</span>
+      <span class="skill-chip"><span class="skill-dot"></span>GPS / Géolocalisation</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Architecture feature-first</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Cross-platform iOS &amp; Android</span>
+      <span class="skill-chip"><span class="skill-dot"></span>Sécurité mobile</span>
+    </div>
+  </section>
+
+</div>
+
+<script src="../js/accordion.js"></script>
+<script src="../js/pages.js"></script>
+</body>
+</html>
